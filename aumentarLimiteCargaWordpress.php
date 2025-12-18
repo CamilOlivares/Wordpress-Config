@@ -5,4 +5,4 @@ php_value memory_limit 128M
 php_value max_execution_time 300
 php_value max_input_time 300
 
-//se coloca al final del .htacces
+//se coloca al final del .htacces (borrar esta linea)
