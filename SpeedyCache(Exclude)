@@ -1,0 +1,108 @@
+📌 EXCLUDES SPEEDYCACHE (CON EXPLICACIÓN)
+1️⃣ wordpress_logged_in_
+
+Tipo: Cookie → Contains
+Contenido:
+
+wordpress_logged_in_
+
+
+🧠 ¿Para qué sirve?
+Evita que SpeedyCache cachee páginas cuando:
+
+un usuario está logueado
+
+estás en el admin
+
+estás editando con Elementor
+
+estás viendo un subsite del multisite con sesión activa
+
+🔴 Crítico en multisite
+Sin esto:
+
+admin queda cargando
+
+subsites se rompen
+
+editor visual falla
+
+2️⃣ wp-settings-
+
+Tipo: Cookie → Contains
+Contenido:
+
+wp-settings-
+
+
+🧠 ¿Para qué sirve?
+Evita cachear páginas que dependen de:
+
+preferencias de usuario
+
+idioma
+
+opciones del dashboard
+
+configuración por usuario
+
+🟡 Soporte multisite
+WordPress usa esta cookie para manejar estados internos entre sitios.
+
+3️⃣ has Woocommerce Items in Cart
+
+Tipo: Cookie → has Woocommerce Items in Cart
+
+🧠 ¿Para qué sirve?
+Evita que el cache se aplique cuando:
+
+el usuario tiene productos en el carrito
+
+el precio, stock o totales son dinámicos
+
+🔴 Obligatorio si usas WooCommerce
+Sin esto:
+
+carritos cruzados
+
+productos incorrectos
+
+totales erróneos
+
+4️⃣ woocommerce_cart_hash
+
+Tipo: Cookie → Contains
+Contenido:
+
+woocommerce_cart_hash
+
+
+🧠 ¿Para qué sirve?
+Detecta cambios en el carrito:
+
+cuando se agrega / quita un producto
+
+cuando cambia la sesión del carrito
+
+🟡 Refuerzo del exclude anterior
+Asegura que ningún estado del carrito quede cacheado.
+
+🧩 RESUMEN RÁPIDO
+Cookie	Para qué sirve
+wordpress_logged_in_	Excluir usuarios logueados / admin / editor
+wp-settings-	Excluir estado y preferencias del usuario
+has Woocommerce Items in Cart	Excluir páginas con carrito activo
+woocommerce_cart_hash	Excluir cambios dinámicos del carrito
+✅ ESTADO FINAL IDEAL
+
+Con estas reglas:
+
+SpeedyCache cachea solo visitantes anónimos
+
+Admin y multisites quedan estables
+
+Elementor funciona sin bugs
+
+WooCommerce no rompe carritos
+
+Cloudflare y SpeedyCache conviven en paz
